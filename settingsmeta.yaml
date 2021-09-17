@@ -1,0 +1,31 @@
+
+skillMetadata:
+  sections:
+    - name: Domoticz Server
+      fields:
+        - type: label
+          label: Domoticz server information
+        - name: hostname
+          type: text
+          label: Hostname
+          value: "127.0.0.1"
+        - name: protocol
+          type: text
+          label: Protocol
+          value: "http"
+        - name: port
+          type: text
+          label: Port
+          value: "8080"
+    - name: User Login Information
+      fields:
+        - type: label
+          label: Domoticz server logon credentials. Leave blank if not required
+        - name: username
+          type: text
+          label: Username
+          value: ""
+        - name: password
+          type: password
+          label: Password
+          value: ""
