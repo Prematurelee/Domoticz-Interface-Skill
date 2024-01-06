@@ -8,10 +8,10 @@ protocol = "http"
 authentication = ""
 username = ""
 password = ""
-state = "on"
-what = "lights"
-where = "all the"
-action = "turn"
+state = ""
+what = "window blind"
+where = "office"
+action = "close"
 
 domoticz = Domoticz(hostname, port, protocol, authentication, username, password)
 

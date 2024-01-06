@@ -36,7 +36,12 @@ class DomoticzInterface(MycroftSkill):
             'what': what,
             'where': where
         }
-
+        if state == "open":
+            state = "Off"
+            action = "open"
+        if state == "close":
+            state = "On"
+            action = "close"
         response = domoticz.switch(state, what, where, action)
         edng = re.compile(str(state).title(), re.I)
         ending = "ed"
@@ -58,6 +63,11 @@ class DomoticzInterface(MycroftSkill):
             self.speak_dialog("affirm_on", data)
         if state == "off" and not response is None and not response is 0 and not response is 1:
             self.speak_dialog("affirm_off", data)
+        if action == "open" and not response is None and not response is 0 and not response is 1:
+            self.speak_dialog("affirm_open", data)
+        if action == "close" and not response is None and not response is 0 and not response is 1:
+            self.speak_dialog("affirm_close", data)
+
 
 
     @intent_handler(IntentBuilder("InfosIntent")
